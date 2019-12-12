@@ -4,7 +4,7 @@ metadata:
   name: sage-argo
   namespace: argo-dep
 spec:
-  replicas: 3
+  replicas: 2
   revisionHistoryLimit: 3
   selector:
     matchLabels:
