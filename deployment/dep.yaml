@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sage-argo
+  namespace: argo-dep
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: sage-argo
+  template:
+    metadata:
+      labels:
+        app: sage-argo
+    spec:
+      containers:
+      - image: 990399460457.dkr.ecr.us-west-2.amazonaws.com/kubeflow:sage-argo
+        name: sage-argo
+        ports:
+        - containerPort: 8080
